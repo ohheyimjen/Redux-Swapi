@@ -1,5 +1,5 @@
 // we'll need axios
-import { axios } from 'axios';
+import axios from 'axios';
 
 // we'll need to create 3 different action types here.
 // one for fetching, one for success and one for failure
@@ -10,7 +10,8 @@ export const FAILURE = 'FAILURE';
 export const getCharacter= () => dispatch => {
     dispatch({type: FETCH_CHARACTER_LIST});
 
-    axios.get('https://swapi.co/api/people/')
+    axios
+    .get('https://swapi.co/api/people/')
     .then(res => dispatch ({
         type: SUCCESS,
         payload: res.data
