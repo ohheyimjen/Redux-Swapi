@@ -6,10 +6,10 @@ import { CharacterList } from "../components";
 import { getCharacter } from "../actions";
 
 class CharacterListView extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      characters: ''
+      characters: []
     };
   }
 
@@ -19,6 +19,7 @@ class CharacterListView extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     if (this.props.fetching) {
       // return something here to indicate that you are fetching data
       <h2>Characters of the Star Wars we must fetch...</h2>
